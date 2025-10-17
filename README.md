@@ -51,7 +51,7 @@ IP/端口读取：
 
 命令行参数
 脚本通过 flag 包解析参数，使用方式：go run iptest.go [参数]。
-
+```
 -path：输入文件或目录路径（默认 "ip.txt"）。
 -outfile：输出 CSV 文件名（默认 "ip.csv"）。
 -max：最大并发协程数（默认 100）。
@@ -61,7 +61,7 @@ IP/端口读取：
 -tls：是否启用 TLS（默认 true）。
 -tcpurl：TCP 测试 URL（默认 "www.speedtest.net"）。
 -port：输出特定端口结果（默认 0，不过滤）。
-
+```
 使用示例
 
 基本使用（测试 ip.txt 中的 IP，启用速度测试）：
@@ -76,15 +76,12 @@ go run iptest.go -path ip.txt -speedtest 0
 go run iptest.go -path ip_dir -outfile results.csv -port 443 -tls=false
 
 输入示例 (ip.txt)：
-
+```
 8.8.8.8:53
-
 example.com:443
-
 [2001:db8::1]:80
-
 vless://uuid@example.com:443
-
+```
 注意事项
 
 依赖：需 Go 环境编译运行，无外部依赖。
@@ -94,4 +91,5 @@ vless://uuid@example.com:443
 安全性：测试 URL 和端口需合法，避免非法访问。
 
 限制：无互联网安装包能力；速度测试依赖服务器支持 Range 请求。
+
 
